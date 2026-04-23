@@ -22,8 +22,31 @@
   --color-tag-bg: #f3f3f3;
   --color-hover: #f5f5f5;
 
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Chivo Mono', 'SF Mono', 'Fira Code', monospace;
+
+  --weight-xlight: 200;
+  --weight-light: 300;
+
+  --text-2xs: 0.75rem;
+  --text-xs: 0.875rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2rem;
+  --text-4xl: 3rem;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.4;
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.7;
+
+  --tracking-tight: -0.02em;
+  --tracking-snug: -0.01em;
+  --tracking-wide: 0.08em;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -46,11 +69,11 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.7;
-  font-weight: 400;
+  line-height: var(--leading-loose);
+  font-weight: var(--weight-xlight);
 }
 
 a {
@@ -66,55 +89,53 @@ img {
 
 /* --- Typography --- */
 h1 {
-  font-family: var(--font-serif);
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-light);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
 }
 
 h2 {
-  font-size: 1.75rem;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-light);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-snug);
 }
 
 h3 {
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.4;
+  font-size: var(--text-md);
+  font-weight: var(--weight-light);
+  line-height: var(--leading-normal);
 }
 
 p {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: var(--text-base);
+  line-height: var(--leading-loose);
   color: var(--color-text-secondary);
 }
 
 .text-large {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
 }
 
 .text-small {
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
 }
 
 .text-xs {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  font-weight: var(--weight-light);
   color: var(--color-text-tertiary);
 }
 
 .italic-quote {
-  font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.125rem;
+  font-size: var(--text-md);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
 }
 
 /* --- Layout --- */
@@ -162,10 +183,9 @@ p {
 }
 
 .nav__logo {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-size: var(--text-md);
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-snug);
 }
 
 .nav__links {
@@ -175,7 +195,7 @@ p {
 }
 
 .nav__links a {
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   color: var(--color-text-secondary);
   transition: color var(--transition);
   position: relative;
@@ -225,9 +245,8 @@ p {
 }
 
 .hero__tagline {
-  font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--color-text-tertiary);
   margin-bottom: var(--space-md);
 }
@@ -237,15 +256,15 @@ p {
 }
 
 .hero__intro {
-  font-size: 1.125rem;
+  font-size: var(--text-md);
   max-width: 520px;
-  line-height: 1.7;
+  line-height: var(--leading-loose);
   color: var(--color-text-secondary);
 }
 
 .hero__location {
   margin-top: var(--space-sm);
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   color: var(--color-text-tertiary);
 }
 
@@ -258,11 +277,11 @@ p {
 }
 
 .section-label {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-wide);
   color: var(--color-text-tertiary);
-  font-weight: 500;
+  font-weight: var(--weight-light);
 }
 
 /* --- Project Cards --- */
@@ -298,25 +317,25 @@ p {
 }
 
 .project-card__company {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-wide);
   color: var(--color-text-tertiary);
-  font-weight: 500;
+  font-weight: var(--weight-light);
   margin-bottom: var(--space-xs);
 }
 
 .project-card__title {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-light);
   margin-bottom: var(--space-xs);
-  line-height: 1.3;
+  line-height: var(--leading-snug);
 }
 
 .project-card__desc {
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: var(--leading-relaxed);
 }
 
 /* --- Case Study Page --- */
@@ -326,9 +345,9 @@ p {
 }
 
 .case-hero__subtitle {
-  font-size: 1.125rem;
+  font-size: var(--text-md);
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: var(--leading-loose);
   max-width: 640px;
 }
 
@@ -343,16 +362,16 @@ p {
 }
 
 .case-meta dt {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-wide);
   color: var(--color-text-tertiary);
-  font-weight: 500;
+  font-weight: var(--weight-light);
   margin-bottom: 4px;
 }
 
 .case-meta dd {
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   color: var(--color-text);
 }
 
@@ -361,11 +380,11 @@ p {
 }
 
 .case-section__label {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-wide);
   color: var(--color-text-tertiary);
-  font-weight: 500;
+  font-weight: var(--weight-light);
   margin-bottom: var(--space-sm);
 }
 
@@ -384,13 +403,12 @@ p {
 }
 
 .case-highlight {
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 1.3;
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-light);
+  line-height: var(--leading-snug);
   color: var(--color-text);
   margin: var(--space-lg) 0;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--tracking-snug);
 }
 
 /* --- AI + Design Page --- */
@@ -408,7 +426,7 @@ p {
 }
 
 .ai-card__icon {
-  font-size: 1.5rem;
+  font-size: var(--text-xl);
   margin-bottom: var(--space-sm);
 }
 
@@ -418,7 +436,7 @@ p {
 
 .tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   padding: 4px 10px;
   background: var(--color-tag-bg);
   border-radius: 100px;
@@ -430,17 +448,17 @@ p {
 .agent-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   margin: var(--space-md) 0;
 }
 
 .agent-table th {
   text-align: left;
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-wide);
   color: var(--color-text-tertiary);
-  font-weight: 500;
+  font-weight: var(--weight-light);
   padding: var(--space-xs) 0;
   border-bottom: 1px solid var(--color-border);
 }
@@ -454,7 +472,7 @@ p {
 
 .agent-table td:first-child {
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: var(--weight-light);
   white-space: nowrap;
   padding-right: var(--space-md);
 }
@@ -478,22 +496,22 @@ p {
 }
 
 .experience-item__period {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-wide);
   color: var(--color-text-tertiary);
-  font-weight: 500;
+  font-weight: var(--weight-light);
   margin-bottom: 4px;
 }
 
 .experience-item__role {
-  font-weight: 500;
+  font-weight: var(--weight-light);
   margin-bottom: 2px;
 }
 
 .experience-item__company {
   color: var(--color-text-secondary);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
 }
 
 .skills-list {
@@ -516,14 +534,13 @@ p {
 }
 
 .footer__name {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-light);
   margin-bottom: var(--space-xs);
 }
 
 .footer__email {
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   color: var(--color-text-secondary);
 }
 
@@ -534,7 +551,7 @@ p {
 }
 
 .footer__links a {
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   color: var(--color-text-secondary);
   transition: color var(--transition);
 }
