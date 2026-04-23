@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI + Design - Selom Lee</title>
+  <meta name="description" content="Exploring the intersection of design and AI — vibe coding, rapid prototyping, and building skills and agents for designers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Selom Lee</a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav__links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="ai-design.html" class="active">AI + Design</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <section class="ai-intro container--narrow">
+    <p class="case-section__label" style="margin-bottom: 1rem;">AI + Design</p>
+    <h1 style="margin-bottom: 1.5rem;">Reducing the gap between design and development</h1>
+    <p class="text-large">
+      I'm exploring how AI tools can make designers more independent — from turning Figma designs into working code, to building reusable skills and agents that any designer on the team can use.
+    </p>
+  </section>
+
+  <!-- Section 1: Claude Code + Figma MCP -->
+  <section class="section container--narrow">
+    <div class="case-section">
+      <p class="case-section__label">[ Claude Code + Figma MCP ]</p>
+      <h2 style="margin-bottom: 1rem;">From Figma to Flutter with a prompt</h2>
+      <p>
+        I wanted to see how close a designer could get to real development output without writing code from scratch. I set up Claude Code with Figma MCP on our production Flutter codebase — the Picky mobile app — and tested whether I could go from a Figma design to a working screen.
+      </p>
+    </div>
+
+    <div class="ai-card">
+      <p class="ai-card__icon">&#x1F6E0;</p>
+      <h3>The setup</h3>
+      <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">
+        Installed Claude Code, cloned the Flutter repo, connected Figma MCP. Then pointed Claude at a specific Figma node and asked it to create a self-contained high-fidelity wireframe using the existing design system components and tokens.
+      </p>
+    </div>
+
+    <div class="ai-card">
+      <p class="ai-card__icon">&#x1F4AC;</p>
+      <h3>The prompt that worked</h3>
+      <p style="margin-top: 0.5rem; color: var(--color-text-secondary); font-family: monospace; font-size: 0.875rem; line-height: 1.6; background: var(--color-tag-bg); padding: 1rem; border-radius: 8px; margin-top: 0.75rem;">
+        "I have a new design on Figma [node URL]. Use Figma MCP to understand the design first, and use other Figma-related skills to create a self-contained high-fidelity wireframe that includes components from the design system and design system token updates. Make a fresh page with dummy data and access it from the dev control panel."
+      </p>
+    </div>
+
+    <div class="ai-card">
+      <p class="ai-card__icon">&#x1F4A1;</p>
+      <h3>What I learned</h3>
+      <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">
+        Plan mode vs. Edit mode matters — use <code style="background: var(--color-tag-bg); padding: 2px 6px; border-radius: 4px; font-size: 0.875rem;">Shift+Tab</code> to switch. You can ask Claude things like "what branch am I on?" or "commit these changes." Start a new branch for each prototype experiment. Write prompts in a note first since it's hard to edit in the terminal. Press R to refresh on the simulator to see changes live.
+      </p>
+    </div>
+
+    <div class="case-section" style="margin-top: 2rem;">
+      <p class="case-section__label">[ The result ]</p>
+      <p>
+        A working Flutter screen, built from a Figma design, using the actual production design system — created by a designer. Not pixel-perfect, but close enough to validate ideas, test interactions, and have real conversations with engineers using shared code instead of screenshots.
+      </p>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="container--narrow" style="border-top: 1px solid var(--color-border); margin: 0 auto;"></div>
+
+  <!-- Section 2: Skills & Agents for Designers -->
+  <section class="section container--narrow">
+    <div class="case-section">
+      <p class="case-section__label">[ Skills & Agents for Designers ]</p>
+      <h2 style="margin-bottom: 1rem;">Building a design toolkit that talks back</h2>
+      <p>
+        A skill is like a recipe — a set of instructions for a specific task. An agent is your digital buddy that uses those recipes. One agent can mix and match many skills. The goal: optimize the designer's workflow, reduce the gap between design and development, and minimize inefficient communication with engineers.
+      </p>
+    </div>
+
+    <!-- Agent Table -->
+    <table class="agent-table">
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th>Skills it has</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Research Agent</td>
+          <td>Project Scanner, Research Synthesis, User Research</td>
+        </tr>
+        <tr>
+          <td>Design Agent</td>
+          <td>Project Scanner, Wireframing, Prototyping, UX Copy</td>
+        </tr>
+        <tr>
+          <td>Design Review Agent</td>
+          <td>Project Scanner, Design Feedback, Accessibility Review</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="ai-card" style="margin-top: 2rem;">
+      <h3>How to use them</h3>
+      <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">
+        You just talk naturally — on Claude chat or Claude Code. The right skill kicks in automatically based on your words.
+      </p>
+      <table class="agent-table" style="margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th>You say...</th>
+            <th>Skill that triggers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"Review this design for me"</td>
+            <td>Design Feedback</td>
+          </tr>
+          <tr>
+            <td>"Is this accessible?"</td>
+            <td>Accessibility Review</td>
+          </tr>
+          <tr>
+            <td>"Write the copy for this error state"</td>
+            <td>UX Copy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ai-card">
+      <h3>When to create a new skill</h3>
+      <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">
+        Create one when you find yourself repeating the same type of task. If you always format notes the same way — skill it. Your team has a specific handoff checklist — skill it. You summarize your work with a consistent template — skill it.
+      </p>
+    </div>
+
+    <div class="ai-card">
+      <h3>Sharing across the team</h3>
+      <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">
+        Skills are just markdown files. Share them across designers and everyone uses the same toolkit. Keep refining by gathering feedback from the team, then editing and polishing the skill files together.
+      </p>
+    </div>
+
+    <div class="case-section" style="margin-top: 2rem;">
+      <p class="case-section__label">[ My take ]</p>
+      <p class="text-large">
+        The designer who can prototype in code, set up their own AI tools, and share those tools with their team — that's where design is heading. These skills and agents aren't replacing the craft. They're removing the friction around it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Selom Lee</p>
+        <a href="mailto:selom.lee.w@gmail.com" class="footer__email">selom.lee.w@gmail.com</a>
+      </div>
+      <ul class="footer__links">
+        <li><a href="https://www.instagram.com/lomm.design" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/selomlee/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

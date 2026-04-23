@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Application Flow Redesign - Selom Lee</title>
+  <meta name="description" content="Redesigning Picky's event application flow, increasing completions by 33%.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Selom Lee</a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav__links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="works.html" class="active">Works</a></li>
+        <li><a href="ai-design.html">AI + Design</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Case Study Hero -->
+  <section class="case-hero container--narrow">
+    <p class="case-section__label">Picky</p>
+    <h1 style="margin-bottom: 1rem;">Event Application Flow Redesign</h1>
+    <p class="case-hero__subtitle">Picky connects UGC creators with K-beauty brands through events. I redesigned the event application flow, increasing completions by 33%.</p>
+
+    <dl class="case-meta">
+      <div>
+        <dt>Company</dt>
+        <dd>Picky</dd>
+      </div>
+      <div>
+        <dt>Role</dt>
+        <dd>Product designer, end-to-end</dd>
+      </div>
+      <div>
+        <dt>Timeline</dt>
+        <dd>6 weeks</dd>
+      </div>
+      <div>
+        <dt>Team</dt>
+        <dd>1 PM, 1 Engineer</dd>
+      </div>
+      <div>
+        <dt>Responsibilities</dt>
+        <dd>Research, data analysis, UI/UX design</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- Hero Image -->
+  <section class="container">
+    <img src="https://framerusercontent.com/images/ODpQdKh6KxdLfGByVqMewbesAQ.png?width=1920" alt="Event Application Flow Redesign overview" class="case-image" style="border-radius: 12px;">
+  </section>
+
+  <!-- The Story -->
+  <section class="section container--narrow">
+    <div class="case-section">
+      <p class="case-section__label">[ The Story ]</p>
+      <p class="text-large">
+        Picky connects UGC creators with K-beauty brands through events — creators apply, brands pick, and collaborations happen. It's a simple idea, but the application flow wasn't keeping up.
+      </p>
+      <p>
+        Most users who started an event application never finished it. I kept seeing the same complaints from users, so I dug into Statsig to understand what was going on. The funnel told a clear story: people were dropping off, and two things were causing it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Problem Image -->
+  <section class="container">
+    <img src="https://framerusercontent.com/images/8I5aXOJTrc2KdXBuAyFOEvkPM.png?width=2000" alt="Funnel analysis showing drop-off" class="case-image" style="border-radius: 12px;">
+  </section>
+
+  <!-- What was going wrong -->
+  <section class="section container--narrow">
+    <div class="case-section">
+      <p class="case-section__label">[ What was going wrong ]</p>
+      <p>
+        To apply for events, creators need to fill in profile details like their address, social media, and creator info. I noticed this through user complaints and confirmed it in Statsig — the funnel showed a steep drop-off during the application flow. I dug in and found two root causes:
+      </p>
+      <p>
+        First, when required info was missing, the app sent users to a separate "My Page" to fill it in. Most never came back. Second, error messages were vague — users didn't know what was wrong or how to fix it.
+      </p>
+    </div>
+
+    <!-- The Goal -->
+    <div class="case-section">
+      <p class="case-section__label">[ The Goal ]</p>
+      <p class="case-highlight">Increase the event application completion rate by removing friction from the flow.</p>
+    </div>
+
+    <!-- The Approach -->
+    <div class="case-section">
+      <p class="case-section__label">[ The Approach ]</p>
+      <p>
+        I explored a few directions before landing on a solution.
+      </p>
+      <p>
+        The first option was to improve the existing redirect. Keep sending users to My Page, but make the experience better there. It was the smallest change, but it didn't solve the core problem: users were still leaving the event page.
+      </p>
+      <p>
+        The second was a full-screen modal that collected everything at once. This kept users in context, but it felt heavy, especially for creators who only had one or two fields missing.
+      </p>
+      <p>
+        The third was a bottom sheet that asked only for what was missing. Lightweight, contextual, and it kept users exactly where they were. That's the one we went with.
+      </p>
+    </div>
+
+    <!-- What we built -->
+    <div class="case-section">
+      <p class="case-section__label">[ What We Built ]</p>
+      <p>
+        Keep users on the event page — the redirect to My Page was where most users dropped off. Collect only missing info via a bottom sheet. Less work, less friction. Add a step indicator so users can see progress and what's left. Replace vague errors with field-level messages that tell users exactly what to fix.
+      </p>
+      <p>
+        I worked closely with our engineer to rewrite the validation logic. Every error message now points to a specific field and tells the user how to fix it. No more guessing.
+      </p>
+    </div>
+
+    <!-- The Result -->
+    <div class="case-section">
+      <p class="case-section__label">[ The Result ]</p>
+      <p class="case-highlight">+33% completed event applications, measured in Statsig.</p>
+      <p>
+        The biggest change came from a simple shift: instead of asking users to go somewhere else to complete their profile, we brought the form to them. Less navigation, less confusion, more completions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Result Image -->
+  <section class="container">
+    <img src="https://framerusercontent.com/images/UN0hoB0Ks23ZdDkTJdV2ZbyVLI.png?width=2048" alt="Final redesigned event application flow" class="case-image" style="border-radius: 12px;">
+  </section>
+
+  <!-- See Other Work -->
+  <section class="section container--narrow">
+    <h2 style="margin-bottom: 1.5rem;">See Other Work</h2>
+    <div class="other-work">
+      <a href="wallet-redesign.html">
+        <img src="https://framerusercontent.com/images/ynETDPZxFWWRETZBhGKLnW2p8.png?width=800" alt="Wallet Redesign" style="border-radius: 8px;">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Selom Lee</p>
+        <a href="mailto:selom.lee.w@gmail.com" class="footer__email">selom.lee.w@gmail.com</a>
+      </div>
+      <ul class="footer__links">
+        <li><a href="https://www.instagram.com/lomm.design" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/selomlee/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

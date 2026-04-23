@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selom Lee - Product Designer</title>
+  <meta name="description" content="Product designer crafting digital products that are easier, more enjoyable, and more human.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">Selom Lee</a>
+      <button class="nav__toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav__links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="works.html">Works</a></li>
+        <li><a href="ai-design.html">AI + Design</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <p class="hero__tagline">How something feels matters just as much as whether it works.</p>
+    <h1>Hi, I'm Lomi.</h1>
+    <p class="hero__intro">
+      A product designer who builds. I design digital products that are a little easier, a little more enjoyable, and a little more human.
+    </p>
+    <p class="hero__location">&#x2316; Seoul, South Korea</p>
+  </section>
+
+  <!-- Selected Projects -->
+  <section class="section container">
+    <div class="section-header">
+      <span class="section-label">[ Selected Projects ]</span>
+    </div>
+    <div class="projects-grid">
+
+      <a href="wallet-redesign.html" class="project-card">
+        <img src="https://framerusercontent.com/images/ynETDPZxFWWRETZBhGKLnW2p8.png?width=1200" alt="Picky Wallet Redesign" class="project-card__image">
+        <div class="project-card__content">
+          <p class="project-card__company">Picky</p>
+          <h3 class="project-card__title">Wallet Redesign</h3>
+          <p class="project-card__desc">Picky Wallet handles two different payout types. I redesigned it so users actually understand which earnings are automatic and which require a request.</p>
+        </div>
+      </a>
+
+      <a href="event-redesign.html" class="project-card">
+        <img src="https://framerusercontent.com/images/ODpQdKh6KxdLfGByVqMewbesAQ.png?width=1200" alt="Event Application Flow Redesign" class="project-card__image">
+        <div class="project-card__content">
+          <p class="project-card__company">Picky</p>
+          <h3 class="project-card__title">Event Application Flow Redesign</h3>
+          <p class="project-card__desc">Picky connects UGC creators with K-beauty brands through events. I redesigned the event application flow, increasing completions by 33%.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <p class="italic-quote">If you're building something that should work beautifully and feel a little bit delightful, I'd love to hear about it.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__name">Selom Lee</p>
+        <a href="mailto:selom.lee.w@gmail.com" class="footer__email">selom.lee.w@gmail.com</a>
+      </div>
+      <ul class="footer__links">
+        <li><a href="https://www.instagram.com/lomm.design" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/selomlee/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
