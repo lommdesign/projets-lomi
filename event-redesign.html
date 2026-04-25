@@ -15,9 +15,19 @@
   <!-- Navigation -->
   <nav class="nav">
     <a href="index.html" class="nav__logo"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-label="Lomi"><g clip-path="url(#logo-clip)"><path d="M34.599 20.7842C34.038 20.9072 33.488 21.0902 32.949 21.3592C31.61 22.0282 30.472 23.0822 29.747 24.3662C28.04 27.3882 28.697 31.1612 27.565 34.4282C27.404 34.8942 27.136 35.4252 26.658 35.6552C26.415 35.7722 26.087 35.7632 25.909 35.5652C25.828 35.4742 25.787 35.3562 25.759 35.2392C25.44 33.8972 26.063 32.3792 26.497 31.1322C27.104 29.3902 27.732 27.5892 27.109 25.6302C26.653 24.1962 25.766 22.6352 24.308 21.9652C22.593 21.1772 20.702 20.8562 18.851 21.4052C15.914 22.2762 13.946 24.8942 14.353 27.8822C14.54 29.2552 14.465 30.6632 14.131 32.0102C14.006 32.5162 13.829 33.0382 13.433 33.3892C11.919 34.7332 10.883 32.2042 10.842 31.0912C10.784 29.4812 11.195 27.8762 11.195 26.2642C11.195 23.5862 9.493 21.7772 6.881 21.0732C5.014 20.5692 3.034 20.5412 1.11 20.5772C0.987 20.5792 0.792 20.5802 0.6 20.5802C0.269 20.5782 0 20.8392 0 21.1612V39.4032C0 39.7252 0.269 39.9852 0.6 39.9852H4.956C5.287 39.9852 5.556 39.7242 5.556 39.4032V25.7962C5.556 25.2242 5.522 24.9292 6.305 25.2252C6.805 25.4142 7.211 25.8322 7.425 26.3042C7.737 26.9952 7.704 27.7892 7.549 28.5292C7.394 29.2682 7.124 29.9822 6.976 30.7232C6.804 31.5822 6.79 32.6802 6.899 33.5572C7.026 34.5832 7.494 35.6392 8.27 36.3562C9.958 37.9162 12.866 38.1452 14.879 37.0772C16.812 36.0502 17.86 33.9202 18.288 31.8232C18.552 30.5282 18.628 29.1972 18.512 27.8822C18.434 27.0022 18.323 25.9772 18.987 25.3732C19.328 25.0622 19.824 24.9402 20.289 24.9892C21.569 25.1222 22.431 26.4432 22.469 27.6922C22.51 29.0302 21.779 30.0452 21.409 31.2682C20.837 33.1602 20.842 35.6612 21.843 37.3922C23.467 40.2012 28.025 40.9292 30.468 38.5392C32.725 36.3302 32.2 32.4772 32.038 29.6872C31.956 28.2742 32.009 26.8002 32.665 25.5362C33.083 24.7312 33.989 23.8112 34.306 25.0982C34.49 25.8472 34.46 26.6892 34.46 27.4462C34.46 29.0132 34.46 30.5802 34.46 32.1462C34.46 34.5662 34.46 36.9862 34.46 39.4062C34.46 39.7282 34.729 39.9882 35.06 39.9882H39.403C39.734 39.9882 40.003 39.7272 40.003 39.4062V21.1562C40.003 20.8362 39.738 20.5772 39.408 20.5742L39.142 20.5722C38.722 20.5622 38.287 20.5512 37.845 20.5462C36.732 20.5352 35.649 20.5572 34.601 20.7882L34.599 20.7842Z" fill="currentColor"/><path d="M18.844 13.889H5.334V0.6C5.334 0.269 5.065 0 4.734 0H0.6C0.269 0 0 0.269 0 0.6V18.844C0 19.175 0.269 19.444 0.6 19.444H18.844C19.175 19.444 19.444 19.175 19.444 18.844V14.489C19.444 14.158 19.175 13.889 18.844 13.889Z" fill="currentColor"/><path d="M39.3879 0H21.1439C20.8139 0 20.5439 0.27 20.5439 0.6V18.844C20.5439 19.174 20.8139 19.444 21.1439 19.444H39.3879C39.7179 19.444 39.9879 19.174 39.9879 18.844V0.6C39.9879 0.27 39.7179 0 39.3879 0ZM30.2659 13.953C27.9289 13.953 26.0349 12.059 26.0349 9.722C26.0349 7.385 27.9289 5.491 30.2659 5.491C32.6029 5.491 34.4969 7.385 34.4969 9.722C34.4969 12.059 32.6029 13.953 30.2659 13.953Z" fill="currentColor"/></g><defs><clipPath id="logo-clip"><rect width="40" height="40" fill="white"/></clipPath></defs></svg></a>
-    <button class="nav__toggle" aria-label="Toggle menu">
-      <div class="nav__toggle-dots"><span></span><span></span><span></span></div>
-    </button>
+    <div class="nav__actions">
+      <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+        <span class="theme-toggle__icon"></span>
+      </button>
+      <button class="nav__toggle" aria-label="Toggle menu">
+        <div class="nav__toggle-dots"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+    <div class="nav__location">
+      <span class="nav__location-dot">●</span>
+      <span>SEOUL, KR</span>
+      <span class="nav__location-time" id="localTime"></span>
+    </div>
     <div class="nav__panel">
       <div class="nav__panel-bg"></div>
       <div class="nav__panel-content">
@@ -25,17 +35,14 @@
           <ul class="nav__links">
             <li><a href="about.html">About</a></li>
             <li><a href="works.html">Work</a></li>
-            <li><a href="ai-design.html">AI + Design</a></li>
+            <li><a href="ai-design.html">Design & AI</a></li>
           </ul>
           <div class="nav__meta">
             <p class="nav__meta-label">Connect</p>
-            <a href="mailto:selom.lee.w@gmail.com">selom.lee.w@gmail.com</a>
-            <a href="https://www.instagram.com/lomm.design" target="_blank" rel="noopener">Instagram</a>
             <a href="https://www.linkedin.com/in/selomlee/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.instagram.com/lomm.design" target="_blank" rel="noopener">Instagram</a>
+            <a href="mailto:selom.lee.w@gmail.com">selom.lee.w@gmail.com</a>
           </div>
-          <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
-            <span class="theme-toggle__icon"></span>
-          </button>
         </div>
       </div>
     </div>
@@ -205,6 +212,17 @@
           nav.classList.remove('nav--open');
         }
       });
+    })();
+
+    // Seoul time
+    (function() {
+      function updateTime() {
+        var now = new Date();
+        var time = now.toLocaleTimeString('en-US', { timeZone: 'Asia/Seoul', hour: 'numeric', minute: '2-digit', hour12: true });
+        document.getElementById('localTime').textContent = time + '  GMT+9';
+      }
+      updateTime();
+      setInterval(updateTime, 60000);
     })();
   </script>
 </body>
