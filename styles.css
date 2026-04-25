@@ -45,6 +45,11 @@
   --color-tag-bg: oklch(from var(--pink-50) l c h / 0.08);
   --color-hover: oklch(from var(--pink-50) l c h / 0.05);
   --color-nav-bg: oklch(from var(--olive-800) l c h / 0.85);
+  --color-nav-panel: var(--pink-100);
+  --color-nav-panel-text: var(--olive-800);
+  --color-nav-panel-secondary: oklch(from var(--olive-800) l c h / 0.64);
+  --color-nav-panel-tertiary: oklch(from var(--olive-800) l c h / 0.4);
+  --color-nav-panel-border: oklch(from var(--olive-800) l c h / 0.12);
   --color-shadow: oklch(0 0 0 / 0.2);
 
   --font-mono: 'Chivo Mono', 'SF Mono', 'Fira Code', monospace;
@@ -100,6 +105,11 @@
   --color-tag-bg: oklch(from var(--olive-800) l c h / 0.08);
   --color-hover: oklch(from var(--olive-800) l c h / 0.05);
   --color-nav-bg: oklch(from var(--pink-50) l c h / 0.85);
+  --color-nav-panel: var(--olive-900);
+  --color-nav-panel-text: var(--pink-50);
+  --color-nav-panel-secondary: oklch(from var(--pink-50) l c h / 0.64);
+  --color-nav-panel-tertiary: oklch(from var(--pink-50) l c h / 0.4);
+  --color-nav-panel-border: oklch(from var(--pink-50) l c h / 0.12);
   --color-shadow: oklch(0 0 0 / 0.06);
 }
 
@@ -117,6 +127,11 @@
     --color-tag-bg: oklch(from var(--olive-800) l c h / 0.08);
     --color-hover: oklch(from var(--olive-800) l c h / 0.05);
     --color-nav-bg: oklch(from var(--pink-50) l c h / 0.85);
+    --color-nav-panel: var(--olive-900);
+    --color-nav-panel-text: var(--pink-50);
+    --color-nav-panel-secondary: oklch(from var(--pink-50) l c h / 0.64);
+    --color-nav-panel-tertiary: oklch(from var(--pink-50) l c h / 0.4);
+    --color-nav-panel-border: oklch(from var(--pink-50) l c h / 0.12);
     --color-shadow: oklch(0 0 0 / 0.06);
   }
 }
@@ -228,11 +243,18 @@ p {
   position: fixed;
   top: var(--space-md);
   left: var(--space-md);
-  font-size: 1.125rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
   pointer-events: auto;
   z-index: 101;
+  color: var(--color-text);
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.nav__logo svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -240,51 +262,47 @@ p {
   position: fixed;
   top: var(--space-md);
   right: var(--space-md);
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border: none;
   cursor: pointer;
   pointer-events: auto;
   z-index: 102;
-  transition: border-color var(--transition);
 }
 
-.nav__toggle:hover {
-  border-color: var(--color-text);
+.nav__toggle-dots {
+  display: flex;
+  gap: 4px;
+  transition: transform 300ms ease-in-out;
 }
 
-.nav__toggle span {
+.nav__toggle-dots span {
   display: block;
-  width: 16px;
-  height: 1.5px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
   background: var(--color-text);
-  margin: 3px 0;
-  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
 }
 
-/* Toggle X state */
-.nav--open .nav__toggle span:nth-child(1) {
-  transform: translateY(4.5px) rotate(45deg);
+/* Rotate to vertical dots when open, switch color to panel text */
+.nav--open .nav__toggle-dots {
+  transform: rotate(90deg);
 }
 
-.nav--open .nav__toggle span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav--open .nav__toggle span:nth-child(3) {
-  transform: translateY(-4.5px) rotate(-45deg);
+.nav--open .nav__toggle-dots span {
+  background: var(--color-nav-panel-text);
 }
 
 /* Panel */
 .nav__panel {
   position: fixed;
-  top: var(--space-md);
-  right: var(--space-md);
+  top: calc(var(--space-md) - 12px);
+  right: calc(var(--space-md) - 12px);
   z-index: 101;
   pointer-events: none;
 }
@@ -298,11 +316,10 @@ p {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40px;
-  height: 40px;
-  background: var(--color-surface);
+  width: 48px;
+  height: 48px;
+  background: var(--color-nav-panel);
   border-radius: 12px;
-  border: 1px solid var(--color-border);
   opacity: 0;
   transform-origin: top right;
   transition:
@@ -345,23 +362,23 @@ p {
 
 .nav__panel-inner {
   overflow: hidden;
-  padding: var(--space-lg) var(--space-md);
-  min-width: 280px;
+  padding: calc(24px + var(--space-md)) var(--space-md) var(--space-md);
+  min-width: 260px;
 }
 
 /* Nav links */
 .nav__links {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 4px;
   list-style: none;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .nav__links a {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  color: var(--color-nav-panel-text);
   transition: opacity 100ms ease-in-out;
   display: block;
 }
@@ -374,35 +391,35 @@ p {
 .nav__meta {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--color-border-light);
+  gap: 4px;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-nav-panel-border);
 }
 
 .nav__meta-label {
-  font-size: 0.75rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-tertiary);
-  font-weight: 500;
-  margin-bottom: var(--space-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-nav-panel-tertiary);
+  font-weight: var(--weight-light);
+  margin-bottom: 2px;
 }
 
 .nav__meta a {
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  color: var(--color-nav-panel-secondary);
   transition: color var(--transition);
 }
 
 .nav__meta a:hover {
-  color: var(--color-text);
+  color: var(--color-nav-panel-text);
 }
 
 /* Theme toggle */
 .theme-toggle {
-  margin-top: auto;
+  margin-top: var(--space-sm);
   background: none;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-nav-panel-border);
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -414,13 +431,13 @@ p {
 }
 
 .theme-toggle:hover {
-  border-color: var(--color-text);
+  border-color: var(--color-nav-panel-text);
 }
 
 .theme-toggle__icon::before {
   content: '\263E';
   font-size: var(--text-xs);
-  color: var(--color-text);
+  color: var(--color-nav-panel-text);
 }
 
 [data-theme="light"] .theme-toggle__icon::before {
