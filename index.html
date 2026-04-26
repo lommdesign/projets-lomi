@@ -15,7 +15,8 @@
 
   <!-- Preloader -->
   <div class="preloader" id="preloader">
-    <p class="preloader__text">How something feels matters just as much as whether it works.</p>
+    <p class="preloader__text">How something feels matters just as much as how it works.</p>
+    <div class="preloader__bar"><div class="preloader__bar-fill"></div></div>
   </div>
 
   <!-- Navigation -->
@@ -122,10 +123,10 @@
       var preloader = document.getElementById('preloader');
       setTimeout(function() {
         preloader.classList.add('preloader--done');
-      }, 2200);
+      }, 3000);
       setTimeout(function() {
         preloader.style.display = 'none';
-      }, 3000);
+      }, 3800);
     })();
 
     // Seoul time
@@ -174,7 +175,7 @@
         });
       }
 
-      setTimeout(cycle, 2400);
+      setTimeout(cycle, 3200);
     })();
 
     // Capture click position for circle-expand transition
